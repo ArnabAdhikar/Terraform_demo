@@ -1,0 +1,16 @@
+provider "aws" {
+  region = "ap-south-1"
+}
+
+variable "ami" {
+  description = "The AMI goes here"
+}
+
+variable "instance_type" {
+  description = "The instance type goes here"
+}
+
+resource "aws_instance" "example" {
+  ami           = var.ami
+  instance_type = var.instance_type
+}
